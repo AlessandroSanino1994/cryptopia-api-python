@@ -140,7 +140,12 @@ class Api(object):
                               post_parameters={'Type': trade_type,
                                                'OrderID': order_id,
                                                'TradePairID': tradepair_id})
-
+    
+    def cancel_all_trade(self):
+        """ Cancels an active trade """
+        return self.api_query(feature_requested='CancelTrade',
+                              post_parameters={'Type': 'ALL'})
+    
     def submit_tip(self, currency, active_users, amount):
         """ Submits a tip """
         return self.api_query(feature_requested='SubmitTip',
