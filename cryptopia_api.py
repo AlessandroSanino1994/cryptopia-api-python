@@ -141,7 +141,7 @@ class Api(object):
                                                'OrderID': order_id,
                                                'TradePairID': tradepair_id})
     
-    def cancel_all_trade(self):
+    def cancel_all_trades(self):
         """ Cancels an active trade """
         return self.api_query(feature_requested='CancelTrade',
                               post_parameters={'Type': 'ALL'})
